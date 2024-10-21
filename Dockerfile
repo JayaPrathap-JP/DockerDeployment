@@ -4,8 +4,10 @@ FROM nginx:latest
 WORKDIR /usr/share/nginx/html
 
 
-COPY index.html
-COPY error/404.html
+COPY index.html .
+COPY error/404.html .
+COPY assets/ ./assets/
+COPY images/ ./images/
 COPY default.conf /etc/nginx/conf.d/
 
 
