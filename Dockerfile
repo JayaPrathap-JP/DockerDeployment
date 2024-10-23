@@ -26,6 +26,13 @@ RUN mkdir -p /var/www/certbot && \
     chown -R nginx:nginx /var/www/certbot && \
     chmod -R 755 /var/www/certbot
 
+# Create necessary directories for Let's Encrypt certificates
+RUN mkdir -p /etc/letsencrypt/live/aws1.alchemdigital.com && \
+    mkdir -p /etc/letsencrypt/archive/aws1.alchemdigital.com && \
+    mkdir -p /etc/letsencrypt/renewal && \
+    chown -R nginx:nginx /etc/letsencrypt && \
+    chmod -R 755 /etc/letsencrypt
+
 # Define volume for Let's Encrypt certificates
 VOLUME /etc/letsencrypt
 
