@@ -1,5 +1,5 @@
 # Use the latest NGINX image as a base
-FROM nginx:latest
+FROM 3b25b682ea82
 
 # Set the working directory
 WORKDIR /usr/share/nginx/html
@@ -20,5 +20,5 @@ RUN chown -R nginx:nginx /usr/share/nginx/html && \
 # Expose port 80
 EXPOSE 80
 
-# Start NGINX
-CMD ["nginx", "-g", "daemon off;"]
+
+
