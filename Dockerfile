@@ -9,7 +9,6 @@ COPY index.html .
 COPY error/404.html .
 COPY assets/ ./assets/
 COPY images/ ./images/
-COPY favicon.ico .
 COPY default.conf /etc/nginx/conf.d/
 
 # Set permissions
