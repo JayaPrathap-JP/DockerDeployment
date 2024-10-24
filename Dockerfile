@@ -31,4 +31,4 @@ EXPOSE 80 443
 RUN echo "0 0 * * * /usr/bin/certbot renew --quiet && nginx -s reload" > /etc/cron.d/certbot-renew
 
 # Run Certbot to obtain SSL certificates and then start Nginx
-CMD ["sh", "-c", "if [ ! -f /etc/letsencrypt/live/alchem.in.net/fullchain.pem ]; then certbot --nginx -d alchem.in.net --non-interactive --agree-tos --email your_email@example.com; fi && nginx -g 'daemon off;'"]
+CMD ["sh", "-c", "if [ ! -f /etc/letsencrypt/live/alchem.in.net/fullchain.pem ]; then certbot --nginx -d alchem.in.net --non-interactive --agree-tos --email jayaprathap1996@gmail.com; fi && nginx -g 'daemon off;'"]
