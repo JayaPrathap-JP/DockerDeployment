@@ -1,5 +1,5 @@
 # Use the latest NGINX image as a base
-FROM 3b25b682ea82
+FROM nginx:latest
 
 # Set the working directory
 WORKDIR /usr/share/nginx/html
