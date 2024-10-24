@@ -30,5 +30,5 @@ EXPOSE 80 443
 # Add a cron job to renew SSL certificates daily
 RUN echo "0 0 * * * /usr/bin/certbot renew --quiet && nginx -s reload" > /etc/cron.d/certbot-renew
 
-# Run Nginx and cron in the foreground
-CMD ["sh", "-c", "cron && nginx -g 'daemon off;'"]
+# Run Certbot to obtain SSL certificates and then start Nginx
+CMD ["sh", "-c", "if [ ! -f /etc/letsencrypt/live/alchem.in.net/fullchain.pem ]; then certbot --nginx -d alchem.in.net --non-interactive --agree-tos --email your_email@example.com; fi && nginx -g 'daemon off;'"]
